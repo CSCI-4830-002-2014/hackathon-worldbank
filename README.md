@@ -91,10 +91,12 @@ Authors:
 ### Design 1
 
 ![screenshot of D3 visualization](d3_screenshot.png?raw=true) 
+
 [d3 source code](d3_1.html)
 
 ### Design 2
-![screenshot of D3 visualization](d3_screenshot.png?raw=true) 
+![screenshot of D3 visualization](d3_screenshot.png?raw=true)
+
 [d3 source code](d3_2.html)
 
 # Objective 2. Public Display
