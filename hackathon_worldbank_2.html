@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.12/d3.min.js"></script>
+        <style type="text/css">  
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var w = 1500;
+            var h = 800;        
+            var margin = 100;
+ 
+            var svg = d3.select("body")          
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+
+            d3.csv("https://gist.githubusercontent.com/nfejes/ac8bdbdb8bb45fda182d/raw/12bcc3137fe3a94a7628460699ef4c139f6b673b/gistfile1.txt",
+                   function(dataset) {
+//            	console.log(dataset);
+
+            dataset2 = [];
+            for (i in dataset) {
+                var d = dataset[i];
+                if (!(d.country in dataset2))
+                    dataset2[d.country] = [];
+
+                dataset2[d.country][d.date] = d;
+            }
+            console.log(dataset2);
+            var ds2 = [];
+            for(var d in dataset2){
+                ds2.push(dataset2[d]);
+            }
+
+
+          function yaxis(d) {return d.Mobile / d.Population}
+          function dotsize(d) {return d.PopulationUrban / d.Population}
+
+          var yScale = d3.scale.linear()
+            .domain([0, d3.max(dataset.map(yaxis))])
+            .range([h, 0]);
+ 
+          var xScale = d3.scale.linear()
+            .domain([0, d3.max(dataset.map(function(d) {
+              return +d.GDPpercapita
+            }))])
+            .range([0, w]);            
+
+          var sizeScale = d3.scale.linear()
+            .domain([0, d3.max(dataset.map(dotsize))])
+            .range([2, 7]);
+
+            svg.append("rect").attr("width",  w).attr("height", h).attr('fill','white').attr("stroke", "red");
+
+            
+            country = svg.selectAll("g.country").data(dataset2).enter().append("circle").attr('class','country');
+            
+            console.log(dataset);
+            console.log(ds2);
+            console.log(typeof dataset);
+
+            
+            function cpath(data) {
+                var s = "";
+                for (var i in data) {
+                    var d = data[i];
+                    if (d.GDPpercapita == "" || d.Internet == "") continue;
+                    if (s == "") s += " M";
+                    else         s += " L";
+                    s += xScale(d.GDPpercapita) + " " + yScale(yaxis(d));
+                }
+                return s;
+            }
+
+             svg.selectAll("path").data(ds2).enter().append("path")
+                .attr("d", cpath)
+                .attr('fill', 'transparent')
+            	.attr("stroke-width", 2)
+            	.attr("stroke", "black");
+
+            symbol = svg.selectAll("circle").data(dataset).enter().append("circle")
+                .attr("r",  function(d) { return sizeScale(dotsize(d)) })
+                .attr("cx", function(d) { return xScale(d.GDPpercapita) })
+                .attr("cy", function(d) { return yScale(yaxis(d)) })
+                .attr("transform", function(d, i) {
+                return "translate(" + xScale(d.x) + "," + yScale(d.y) +")";
+              });
+            return;
+
+            svg.append("rect")
+                .attr("width",  function(d) { return d.size / 2 })
+                .attr("height", function(d) { return d.size / 2 })
+                .attr("x", function(d) { return (d.quadrant == 2 || d.quadrant == 3) ? 0 : d.size/2 })
+                .attr("y", function(d) { return (d.quadrant == 1 || d.quadrant == 2) ? 0 : d.size/2 })
+                .attr("fill", "blue");
+
+
+            function quadcx(d) { return d.size/4 + ((d.quadrant == 2 || d.quadrant == 3) ? 0 : d.size/2) }
+            function quadcy(d) { return d.size/4 + ((d.quadrant == 1 || d.quadrant == 2) ? 0 : d.size/2) }
+            function circx(d)  { return quadcx(d) + d.distance * Math.cos(d.angle) }
+            function circy(d)  { return quadcy(d) + d.distance * Math.sin(d.angle) }
+
+            symbol.append("circle")
+                .attr("r",  function(d) { return d.size/4 })
+                .attr("cx", quadcx)
+                .attr("cy", quadcy)
+                .attr("fill", "blue");
+
+            symbol.append("rect")
+                .attr("width",  function(d) { return 10 })
+                .attr("height", function(d) { return d.energy })
+                .attr("x",      function(d) { return d.size/2 - 5 })
+                .attr("y",      function(d) { return d.size })
+                .attr("fill", "black");    
+
+            symbol.append("circle")
+                .attr("r",  function(d) { return 5 })            
+                .attr("cx", circx)
+                .attr("cy", circy)
+                .attr("fill", "skyblue"); 
+
+            symbol.append("line")
+            	.attr("x1", quadcx)
+            	.attr("y1", quadcy)
+            	.attr("x2", circx)
+            	.attr("y2", circy)
+            	.attr("stroke-width", 2)
+            	.attr("stroke", "black");
+			});
+
+        </script>
+    </body>
+</html>
