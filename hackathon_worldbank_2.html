@@ -53,6 +53,9 @@
           var sizeScale = d3.scale.linear()
             .domain([0, d3.max(dataset.map(dotsize))])
             .range([2, 7]);
+          var colorScale = d3.scale.linear()
+            .domain([0, d3.max(dataset.map(function (d) {return +d.LifeExpectancyTotal}))])
+            .range([0, 256]);
 
             svg.append("rect").attr("width",  w).attr("height", h).attr('fill','white').attr("stroke", "red");
 
@@ -63,6 +66,12 @@
             console.log(ds2);
             console.log(typeof dataset);
 
+			function color(d) {
+				var v = d.LifeExpectancyTotal;
+				var red = 0|(256 - colorScale(d));
+				var green = 0|colorScale(d);
+				return "rgb(" + red +"," + green + ",0)";	
+			}
             
             function cpath(data) {
                 var s = "";
@@ -86,50 +95,10 @@
                 .attr("r",  function(d) { return sizeScale(dotsize(d)) })
                 .attr("cx", function(d) { return xScale(d.GDPpercapita) })
                 .attr("cy", function(d) { return yScale(yaxis(d)) })
+				.attr('fill', color)
                 .attr("transform", function(d, i) {
                 return "translate(" + xScale(d.x) + "," + yScale(d.y) +")";
               });
-            return;
-
-            svg.append("rect")
-                .attr("width",  function(d) { return d.size / 2 })
-                .attr("height", function(d) { return d.size / 2 })
-                .attr("x", function(d) { return (d.quadrant == 2 || d.quadrant == 3) ? 0 : d.size/2 })
-                .attr("y", function(d) { return (d.quadrant == 1 || d.quadrant == 2) ? 0 : d.size/2 })
-                .attr("fill", "blue");
-
-
-            function quadcx(d) { return d.size/4 + ((d.quadrant == 2 || d.quadrant == 3) ? 0 : d.size/2) }
-            function quadcy(d) { return d.size/4 + ((d.quadrant == 1 || d.quadrant == 2) ? 0 : d.size/2) }
-            function circx(d)  { return quadcx(d) + d.distance * Math.cos(d.angle) }
-            function circy(d)  { return quadcy(d) + d.distance * Math.sin(d.angle) }
-
-            symbol.append("circle")
-                .attr("r",  function(d) { return d.size/4 })
-                .attr("cx", quadcx)
-                .attr("cy", quadcy)
-                .attr("fill", "blue");
-
-            symbol.append("rect")
-                .attr("width",  function(d) { return 10 })
-                .attr("height", function(d) { return d.energy })
-                .attr("x",      function(d) { return d.size/2 - 5 })
-                .attr("y",      function(d) { return d.size })
-                .attr("fill", "black");    
-
-            symbol.append("circle")
-                .attr("r",  function(d) { return 5 })            
-                .attr("cx", circx)
-                .attr("cy", circy)
-                .attr("fill", "skyblue"); 
-
-            symbol.append("line")
-            	.attr("x1", quadcx)
-            	.attr("y1", quadcy)
-            	.attr("x2", circx)
-            	.attr("y2", circy)
-            	.attr("stroke-width", 2)
-            	.attr("stroke", "black");
 			});
 
         </script>
