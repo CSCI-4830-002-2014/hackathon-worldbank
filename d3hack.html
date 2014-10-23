@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3: scatterplot</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //Width and height
+      var w = 1200;
+      var h = 700;
+
+      d3.csv("data/world_data.csv", function(data) {
+
+        var tip = d3.tip()
+          .attr('class', 'd3-tip')
+          .offset([-10, 0])
+          .html(function(d) {
+            return "<strong></strong> <span style='color:red'>" + d[0]["Country Name"] + ",   GDP per capita ($): " + d[0]["Finance: GDP per capita (current US$)"]+ "</span>";
+          })
+
+        var groupedData = []
+        for(i=0; i < data.length; i+=10){
+          var arr = []
+          for (j=0; j < 11; j++){
+            arr.push(data[i+j]);
+          }
+          groupedData.push(arr)
+        }
+
+        var padding = 50;
+
+        //Create SVG element
+        var svg = d3.select("body")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+        //Create scale functions
+        var xScale = d3.scale.linear()
+                   .domain([30, d3.max(groupedData, function(d) { return d[0]["Health: Life expectancy at birth, male (years)"]; })])
+                   .range([padding, w - padding * 2]);
+
+        var yScale = d3.scale.linear()
+                   .domain([100, d3.max(groupedData, function(d) { return d[0]["Finance: GDP per capita (current US$)"]; })])
+                   .range([h - padding, padding]);
+
+        var rScale = d3.scale.linear()
+               .domain([0, d3.max(groupedData, function(d) { return d[0]["Population:: Birth rate, crude (per 1,000)"]; })])
+               .range([.05, 1]);
+
+               svg.call(tip);
+
+        var country = svg.selectAll("circle")
+           .data(groupedData)
+           .enter()
+           .append("circle")
+           .attr("cx", function(d) {
+              if ((+d[0]["Health: Life expectancy at birth, male (years)"])){
+                return xScale((d[0]["Health: Life expectancy at birth, male (years)"]));
+              }
+           })
+           .attr("cy", function(d) {
+              if (+d[0]["Finance: GDP per capita (current US$)"]){
+                return yScale(d[0]["Finance: GDP per capita (current US$)"]);
+              }
+           })
+           .attr("fill", function (d,i){
+              if (+d[0]["Health: Health expenditure per capita (current US$)"] < 20){
+                  return 'gray';
+              } else if ((+d[0]["Health: Health expenditure per capita (current US$)"] >= 20) && (+d[0]["Health: Health expenditure per capita (current US$)"]) < 50){
+                return 'lime';
+              } else if (+d[0]["Health: Health expenditure per capita (current US$)"] >= 50){
+                return 'blue';
+              }
+              return 'black';
+           })
+           .attr("r", function(d) {
+              return rScale(d[0]["Population:: Birth rate, crude (per 1,000)"]);
+           })
+            .on('mouseover', tip.show)
+           .on('mouseout', tip.hide);
+
+
+
+          animateData(0);
+
+         function animateData(k){
+           country.transition()
+           .duration(4000)
+           .attr("cx", function(d) {
+              if ((+d[k]["Health: Life expectancy at birth, male (years)"])){
+                return xScale((d[k]["Health: Life expectancy at birth, male (years)"]));
+              }
+           })
+           .attr("cy", function(d) {
+              if (+d[k]["Finance: GDP per capita (current US$)"]){
+                return yScale(d[k]["Finance: GDP per capita (current US$)"]);
+              }
+           })
+           .attr("fill", function (d,i){
+              if (+d[k]["Health: Health expenditure per capita (current US$)"] < 300){
+                  return 'gray';
+              } else if (+d[k]["Health: Health expenditure per capita (current US$)"] > 300){
+                return 'lime';
+              }
+              return 'black';
+           })
+           .attr("r", function(d) {
+              return rScale(d[k]["Population:: Birth rate, crude (per 1,000)"]);
+           })
+           .each("end", animateData(k+1));
+         }
+      });
+    </script>
+  </body>
+</html>
