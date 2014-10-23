@@ -1,82 +1,33 @@
 # Team Members
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Brian Newsom](https://github.com/BrianNewsom)
+* [Adrian Chen](https://github.com/Adrian-Chen)
+* [Chris Wittenberg](https://github.com/cwitty1919)
+* [Dawson Botsford](https://github.com/DawsonBotsford)
 
 # Objective 1. Custom Visualizations
 
 ## Initial Sketches
 
 ### Idea 1
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
+![initial-sketch](http://i.imgur.com/BEa7ACj.jpg) 
+This is a graph to compare two countries in one dimension. We have a changing y-axis and a line connecting the peak of one to the peak of another. This line is to demonstrate strain across the changing countries and show their correlation. We are doing an animation over years and the color of the line helps to show if it is a positive change or negative in comparison to the previous year. 
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Dawson Botsford](https://github.com/DawsonBotsford)
+* [Adrian Chen](https://github.com/Adrian-Chen)
 
 ### Idea 2
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 3
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
+![initial-sketch](http://i.imgur.com/BGEYorS.jpg) 
+This implementation builds off the comfort and easy of identification of stick figures. Each country is a  stick figure and has several changing elements based upon the data. The head is elderly population for instance. 
 
 Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 4
-![initial-sketch](initial_sketch_photo.png?raw=true) 
-
-Authors:
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 5
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 6
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Brian Newsom](https://github.com/BrianNewsom)
+* [Chris Wittenberg](https://github.com/cwitty1919)
 
 ## Final Sketches
-
+PHONE DIED. CANNOT TAKE PIC
 [final sketch 1 of 2](final_sketch1.png?raw=true) 
 
 {write-a-paragraph-to-explain}
