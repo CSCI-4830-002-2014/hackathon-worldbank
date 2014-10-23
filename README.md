@@ -1,106 +1,55 @@
 # Team Members
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Alex Tsankov](http://github.com/antsankov)
+* [Josh Ferge](http://github.com/Joshferge)
+* [Mike Fyk](http://github.com/thefyk)
+* [Logan Bates](http://github.com/loganbates)
 
 # Objective 1. Custom Visualizations
 
 ## Initial Sketches
 
 ### Idea 1
-![initial-sketch](initial_sketch.png?raw=true) 
+![initial-sketch](sketch1.jpg?raw=true) 
 
-{write-a-paragraph-to-explain}
+Logan and Mike came up with the idea to make the points on the scatterplot crosses, with the length and heights representing different values.
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Logan](http://github.com/loganbates)
+* [Mike](http://github.com/thefyk)
 
 ### Idea 2
 ![initial-sketch](initial_sketch.png?raw=true) 
 
-{write-a-paragraph-to-explain}
+We forgot to grab a picture of our other sketch, but it wasn't really interesting in that we were doing nothing that a program like Tableau couldn't
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Josh Ferge](http://github.com/Joshferge)
+* [Alex Tsankov](http://github.com/antsankov)
 
-### Idea 3
-![initial-sketch](initial_sketch.png?raw=true) 
 
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 4
-![initial-sketch](initial_sketch_photo.png?raw=true) 
-
-Authors:
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 5
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 6
-![initial-sketch](initial_sketch.png?raw=true) 
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
 
 ## Final Sketches
 
-[final sketch 1 of 2](final_sketch1.png?raw=true) 
+[final sketch 1 of 2](sketch1.png?raw=true) 
 
-{write-a-paragraph-to-explain}
-
-[final sketch 2 of 2](final_sketch2.png?raw=true) 
-
-{write-a-paragraph-to-explain}
+Due to the rapid-ness of the class, we went ahead and just used the first sketch we made.
 
 
 ## Implementation
 
 ### Design 1
 
-![screenshot of D3 visualization](d3_screenshot.png?raw=true) 
+![screenshot of D3 visualization](d3shot.png?raw=true) 
 
-[d3 source code](d3_1.html)
+[d3 source code](test.html)
 
-### Design 2
-![screenshot of D3 visualization](d3_screenshot.png?raw=true)
+We had some troubles getting the data into d3 because of header permissions and d3's library's inability to use local files. This setback is what caused the few bugs that we did have.
 
-[d3 source code](d3_2.html)
 
 # Objective 2. Public Display
 
-![photo of the public display showing the team's first visualization](photo1.png?raw=true)
+![photo of the public display showing the team's first visualization](selfie.jpg?raw=true)
 
-![photo of the public display showing the team's second visualization](photo2.png?raw=true)

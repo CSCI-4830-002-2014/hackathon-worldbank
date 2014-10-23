@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Scatter Plot</title>
+      <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">
+      /* No style rules here yet */   
+    </style>
+  </head>
+  
+  <body>
+    <script type="text/javascript">
+
+      function newParse(number) {
+        var parse = parseInt(number)
+
+        if (isNaN(parse)) {
+          console.log('hi')
+          parse = 0
+          console.log(parse)
+        }
+       
+        return parse
+      }
+
+      //Width and height
+      var width = 1400;
+      var height = 600;
+      var padding = 40;
+      
+      d3.json("https://gist.githubusercontent.com/JoshFerge/7c7ea2c87d230bbc8ea9/raw/gistfile1.txt", function(error, dataset) {
+      //Create scale functions
+      var xScale = d3.scale.linear()
+                 .domain([0, d3.max(dataset, function(d) { return newParse(d["Population: Ages 65+ (% of total)"])})])
+                 .range([0, 600]);
+
+      var yScale = d3.scale.linear()
+                 .domain([0, d3.max(dataset, function(d) { return newParse(d["Health: Health expenditure per capita (current US$)"]) })])
+                 .range([0 , 600]);
+      //Create SVG element
+      var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+      // svg.selectAll("circle")
+      //    .data(dataset)
+      //    .enter()
+      //    .append("circle")
+      //    .attr("fill","red")
+      //    .attr("cx", function(d) {
+      //       return xScale(d.size);
+      //    })
+      //    .attr("cy", function(d) {
+      //       return yScale(d.forks_count);
+      //    })
+      //    .attr("r", function(d) {
+      //       return d.open_issues_count + 1;
+      //    });
+
+      group = svg.selectAll("g")
+      .data(dataset)
+      .enter()
+      .append("g")
+
+
+      //this is the vertical rectangles
+      group.append("rect")
+          .attr("width", function(d,i){
+              return 5;
+          })
+          .attr("height", function(d,i){
+              return 10; // TODO
+          })                
+          .attr("x", function(d){
+            return xScale(newParse(d["Population: Ages 65+ (% of total)"]) /2 - 4) ; // TODO TODO
+          })
+          .attr("y", function(d){
+              return yScale(newParse(d["Health: Health expenditure per capita (current US$)"])) - 2; // TODO
+          })                
+        .attr("fill", "red");
+
+      //this is the horizontal rectangles
+      group.append("rect")
+          .attr("width", function(d,i){
+              return 10;
+          })
+          .attr("height", function(d,i){
+              return 5; // TODO
+          })                
+          .attr("x", function(d){
+              return xScale((newParse(d["Population: Ages 65+ (% of total)"]) /2) - 4) ; // TODO
+          })
+          .attr("y", function(d){
+               return yScale(d["Health: Health expenditure per capita (current US$)"]); // TODO
+          })                
+        .attr("fill", "blue");
+
+      });      
+    </script>
+  </body>
+</html>
