@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3: scatterplot</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">   
+    </style>
+  </head>
+  <body> 
+    <script type="text/javascript">
+
+      //Width and height
+      var w = 700;
+      var h = 500;
+
+      d3.csv("data/world_data.csv", function(data) {
+        dataset = data;
+        var padding = 20;
+
+        //Create SVG element
+        var svg = d3.select("body")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+        //Create scale functions
+        var xScale = d3.scale.linear()
+                   .domain([0, d3.max(dataset, function(d) { return d["Health: Life expectancy at birth, male (years)"]; })])
+                   .range([padding, w - padding * 2]);
+
+        var yScale = d3.scale.linear()
+                   .domain([0, d3.max(dataset, function(d) { return d["Finance: GDP per capita (current US$)"]; })])
+                   .range([h - padding, padding]);
+
+        var rScale = d3.scale.linear()
+               .domain([0, d3.max(dataset, function(d) { return d["Population:: Birth rate, crude (per 1,000)"]; })])
+               .range([.05, 1]);
+
+        svg.selectAll("circle")
+           .data(dataset)
+           .enter()
+           .append("circle")
+           .attr("cx", function(d) {
+              if ((d["Health: Life expectancy at birth, male (years)"])!=NaN){
+                return xScale((d["Health: Life expectancy at birth, male (years)"]));
+              }
+           })
+           .attr("cy", function(d) {
+              if (d["Finance: GDP per capita (current US$)"]!=NaN){
+                return yScale(d["Finance: GDP per capita (current US$)"]);
+              }
+           })
+           .attr("fill", function (d,i){
+              if (d["Health: Health expenditure per capita (current US$)"] < 300){
+                  return 'gray';
+              } else if (d["Health: Health expenditure per capita (current US$)"] > 300){
+                return 'lime';
+              }
+              return 'black';
+           })
+           .attr("r", function(d) {
+              return rScale(d["Population:: Birth rate, crude (per 1,000)"]);
+           });
+
+        // svg.selectAll("text")
+        //    .data(dataset)
+        //    .enter()
+        //    .append("text")
+        //    .text(function(d) {
+        //       return d.name;
+        //    })
+        //    .attr("x", function(d) {
+        //       return xScale(d.size);
+        //    })
+        //    .attr("y", function(d) {
+        //       return yScale(d.forks_count);
+        //    })
+        //    .attr("font-family", "sans-serif")
+        //    .attr("font-size", "11px")
+        //    .attr("fill", "blue");
+      });
+    </script>
+  </body>
+</html>
