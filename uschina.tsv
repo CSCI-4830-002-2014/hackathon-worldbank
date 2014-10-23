@@ -1,15 +1,15 @@
-Country Name	Date	Transit: Railways, (million passenger-km)	Transit: Passenger cars (per 1,000 people)	Business: Mobile phone subscribers	Business: Internet users (per 100 people)	Health: Mortality, under-5 (per 1,000 live births)	Health: Health expenditure per capita (current US$)	Health: Health expenditure, total (% GDP)	Population: Total (count)	Population: Urban (count)	Population:: Birth rate, crude (per 1,000)	Health: Life expectancy at birth, female (years)	Health: Life expectancy at birth, male (years)	Health: Life expectancy at birth, total (years)	Population: Ages 0-14 (% of total)	Population: Ages 15-64 (% of total)	Population: Ages 65+ (% of total)	Finance: GDP (current US$)	Finance: GDP per capita (current US$)
-United States	7/1/2000			109,478,031	43	9	4,703	13	282,162,411	223,190,467	15	79	74	77	21	66	12	9,898,800,000,000	35,082
-United States	7/1/2001			128,500,000	49	8	5,052	14	284,968,955	226,379,338	14	79	74	77	21	66	12	10,233,900,000,000	35,912
-United States	7/1/2002			141,800,000	59	8	5,453	15	287,625,193	229,467,379	14	80	74	77	21	67	12	10,590,200,000,000	36,819
-United States	7/1/2003		467	160,637,000	62	8	5,588	15	290,107,933	232,434,476	14	80	75	77	21	67	12	11,089,300,000,000	38,225
-United States	7/1/2004		466	184,819,000	65	8	5,911	15	292,805,298	235,591,143	14	80	75	77	21	67	12	11,797,800,000,000	40,292
-United States	7/1/2005	8,869	462	203,700,000	68	8	6,259	15	295,516,599	238,777,412	14	80	75	77	21	67	12	12,564,300,000,000	42,516
-United States	7/1/2006	8,660	453	229,600,000	69	8	7,073	16	298,379,912	241,986,109	14	80	75	78	20	67	12	13,314,500,000,000	44,623
-United States	7/1/2007	9,059	451	249,300,000	75	8	7,437	16	301,231,207	245,202,202	14	80	75	78	20	67	13	13,961,800,000,000	46,349
-United States	7/1/2008	9,935	450	261,300,000	74	8	7,720	17	304,093,966	248,444,770	14	81	76	78	20	67	13	14,219,300,000,000	46,760
-United States	7/1/2009	9,476	439	274,300,000	71	8	7,960	18	306,771,529	251,552,654	14	81	76	78	20	67	13	13,863,600,000,000	45,192
-United States	7/1/2010	9,518		278,900,000	74	8	8,362	18	309,349,689	254,594,794	14	81	76	78	20	67	13	14,447,100,000,000	46,702
+Country_Name	Date	Transit:_Railways,_(million_passenger-km)	Transit:_Passenger_cars_(per_1,000_people)	Business:_Mobile_phone_subscribers	Business:_Internet_users_(per_100_people)	Health:_Mortality,_under-5_(per_1,000_live_births)	Health:_Health_expenditure_per_capita_(current_US$)	Health:_Health_expenditure,_total_(%_GDP)	Population:_Total_(count)	Population:_Urban_(count)	Population::_Birth_rate,_crude_(per_1,000)	Health:_Life_expectancy_at_birth,_female_(years)	Health:_Life_expectancy_at_birth,_male_(years)	Health:_Life_expectancy_at_birth,_total_(years)	Population:_Ages_0-14_(%_of_total)	Population:_Ages_15-64_(%_of_total)	Population:_Ages_65+_(%_of_total)	Finance:_GDP_(current_US$)	Finance:_GDP_per_capita_(current_US$)
+United_States	7/1/2000			109,478,031	43	9	4,703	13	282,162,411	223,190,467	15	79	74	77	21	66	12	9,898,800,000,000	35,082
+United_States	7/1/2001			128,500,000	49	8	5,052	14	284,968,955	226,379,338	14	79	74	77	21	66	12	10,233,900,000,000	35,912
+United_States	7/1/2002			141,800,000	59	8	5,453	15	287,625,193	229,467,379	14	80	74	77	21	67	12	10,590,200,000,000	36,819
+United_States	7/1/2003		467	160,637,000	62	8	5,588	15	290,107,933	232,434,476	14	80	75	77	21	67	12	11,089,300,000,000	38,225
+United_States	7/1/2004		466	184,819,000	65	8	5,911	15	292,805,298	235,591,143	14	80	75	77	21	67	12	11,797,800,000,000	40,292
+United_States	7/1/2005	8,869	462	203,700,000	68	8	6,259	15	295,516,599	238,777,412	14	80	75	77	21	67	12	12,564,300,000,000	42,516
+United_States	7/1/2006	8,660	453	229,600,000	69	8	7,073	16	298,379,912	241,986,109	14	80	75	78	20	67	12	13,314,500,000,000	44,623
+United_States	7/1/2007	9,059	451	249,300,000	75	8	7,437	16	301,231,207	245,202,202	14	80	75	78	20	67	13	13,961,800,000,000	46,349
+United_States	7/1/2008	9,935	450	261,300,000	74	8	7,720	17	304,093,966	248,444,770	14	81	76	78	20	67	13	14,219,300,000,000	46,760
+United_States	7/1/2009	9,476	439	274,300,000	71	8	7,960	18	306,771,529	251,552,654	14	81	76	78	20	67	13	13,863,600,000,000	45,192
+United_States	7/1/2010	9,518		278,900,000	74	8	8,362	18	309,349,689	254,594,794	14	81	76	78	20	67	13	14,447,100,000,000	46,702
 China	7/1/2000	441,468		85,260,000	2	33	44	5	1,262,645,000	452,026,910	14	73	70	71	25	68	7	1,198,474,934,199	949
 China	7/1/2001	463,660		144,820,000	3	31	48	5	1,271,850,000	467,023,320	13	73	70	71	25	68	7	1,324,806,914,358	1,042
 China	7/1/2002	480,310		206,005,000	5	30	54	5	1,280,400,000	481,942,560	13	73	70	72	24	69	7	1,453,827,554,714	1,135
