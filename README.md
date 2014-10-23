@@ -28,13 +28,9 @@ Authors:
 
 ## Final Sketches
 PHONE DIED. CANNOT TAKE PIC
-[final sketch 1 of 2](final_sketch1.png?raw=true) 
+[final sketch](IMAG0125.jpg?raw=true) 
 
-{write-a-paragraph-to-explain}
-
-[final sketch 2 of 2](final_sketch2.png?raw=true) 
-
-{write-a-paragraph-to-explain}
+We are making a visualization with transitioning bars, along with a connecting line that changes color whether or not it is positive, negative or neutral.
 
 
 ## Implementation
@@ -43,15 +39,4 @@ PHONE DIED. CANNOT TAKE PIC
 
 ![screenshot of D3 visualization](d3_screenshot.png?raw=true) 
 
-[d3 source code](d3_1.html)
-
-### Design 2
-![screenshot of D3 visualization](d3_screenshot.png?raw=true)
-
-[d3 source code](d3_2.html)
-
-# Objective 2. Public Display
-
-![photo of the public display showing the team's first visualization](photo1.png?raw=true)
-
-![photo of the public display showing the team's second visualization](photo2.png?raw=true)
+[d3 source code](adrian.html)
