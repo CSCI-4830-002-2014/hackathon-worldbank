@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>World Bank Hackathon</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.12/d3.min.js"></script>
+        <style type="text/css">  
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+        var w = 600;
+        var h = 600;
+        var padding = 20;
+            
+        dataset = d3.json("https://api.github.com/orgs/csci-4830-002-2014/repos",
+            function(error, data) {
+                dataset = data;
+
+        //Create scale functions
+        var xScale = d3.scale.linear()
+                             .domain([0, d3.max(dataset, function(d) { return w; })])
+                             .range([padding, w - padding * 2]);
+
+        var yScale = d3.scale.linear()
+                             .domain([0, d3.max(dataset, function(d) { return h; })])
+                             .range([h - padding, padding]);
+
+        var rScale = d3.scale.linear()
+                             .domain([0, d3.max(dataset, function(d) { return d.size; })])
+                             .range([5, 20]);
+
+        //Create SVG element
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+        symbol = svg.selectAll("g")
+          .data(dataset)
+          .enter()
+          .append("g")
+
+          symbol.append("rect")
+          .attr("width", function(d,i){
+              return 50;
+          })
+          .attr("height", function(d,i){
+              return 15; // TODO
+          })                
+          .attr("x", function(d){
+              return xScale(40); // TODO
+          })
+          .attr("y", function(d, i){
+              return yScale(25*(d.created_at.split("-")[1]-"08")); // TODO
+          })
+          
+        symbol.transition().attr("x", 100)
+
+      });
+        </script>
+    </body>
+</html> 
