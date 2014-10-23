@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<script>
+	var w = 1500;
+	var h = 1000;
+var chinaGDP = [949,
+1,042,
+1,135,
+1,274,
+1,490,
+1,731,
+2,069,
+2,651,
+3,414,
+3,749,
+4,433]
+var usGDP = [
+35,082,
+35,912,
+36,819,
+38,225,
+40,292,
+42,516,
+44,623,
+46,349,
+46,760,
+45,192,
+46,702]
+
+	var svg = d3.select("body")
+		.append("svg")
+		.attr("width", w)
+		.attr("height", h);
+
+	usa = svg.selectAll("rect")  // <-- No longer "rect"
+   		.data(usGDP)	
+      		.enter()
+         	.append("rect")
+		.attr("x", 20)
+		.attr("y", 20)
+		.attr("height", 20)
+		.attr("width", 20);
+		
+	china = svg.selectAll("rect")
+		.data(chinaGDP)
+		.enter()
+		.append("rect")
+		.attr("x", 170)
+		.attr("y", 20)
+		.attr("height", 20)
+		.attr("width", 20);
+		
+	for(i=0;i<=10;i++){
+		usa.transition()
+		.attr("height", usGDP[i])
+		.delay(1000)
+		.duration(2000);
+		
+		china.transition()
+		.attr("height", function(d) { return d; })
+		.delay(1000)
+		.duration(2000);	
+	}
+</script>
+</body>
+
