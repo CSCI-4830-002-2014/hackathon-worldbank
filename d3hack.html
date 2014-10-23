@@ -42,19 +42,19 @@
            .enter()
            .append("circle")
            .attr("cx", function(d) {
-              if ((d["Health: Life expectancy at birth, male (years)"])!=NaN){
+              if ((+d["Health: Life expectancy at birth, male (years)"])){
                 return xScale((d["Health: Life expectancy at birth, male (years)"]));
               }
            })
            .attr("cy", function(d) {
-              if (d["Finance: GDP per capita (current US$)"]!=NaN){
+              if (+d["Finance: GDP per capita (current US$)"]){
                 return yScale(d["Finance: GDP per capita (current US$)"]);
               }
            })
            .attr("fill", function (d,i){
-              if (d["Health: Health expenditure per capita (current US$)"] < 300){
+              if (+d["Health: Health expenditure per capita (current US$)"] < 300){
                   return 'gray';
-              } else if (d["Health: Health expenditure per capita (current US$)"] > 300){
+              } else if (+d["Health: Health expenditure per capita (current US$)"] > 300){
                 return 'lime';
               }
               return 'black';
