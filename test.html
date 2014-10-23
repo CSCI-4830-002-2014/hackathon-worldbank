@@ -12,20 +12,32 @@
   <body>
     <script type="text/javascript">
 
+      function newParse(number) {
+        var parse = parseInt(number)
+
+        if (isNaN(parse)) {
+          console.log('hi')
+          parse = 0
+          console.log(parse)
+        }
+       
+        return parse
+      }
+
       //Width and height
       var width = 1400;
       var height = 600;
       var padding = 40;
       
-      d3.json("https://raw.githubusercontent.com/JoshFerge/hackathon-worldbank/master/world_bank.json", function(error, dataset) {
+      d3.json("https://gist.githubusercontent.com/JoshFerge/7c7ea2c87d230bbc8ea9/raw/gistfile1.txt", function(error, dataset) {
       //Create scale functions
       var xScale = d3.scale.linear()
-                 .domain([0, d3.max(dataset, function(d) { return d.size; })])
-                 .range([padding, width - padding * 2]);
+                 .domain([0, d3.max(dataset, function(d) { return newParse(d["Population: Ages 65+ (% of total)"])})])
+                 .range([0, 600]);
 
       var yScale = d3.scale.linear()
-                 .domain([0, d3.max(dataset, function(d) { return d.forks_count; })])
-                 .range([height - padding, padding]);
+                 .domain([0, d3.max(dataset, function(d) { return newParse(d["Health: Health expenditure per capita (current US$)"]) })])
+                 .range([0 , 600]);
       //Create SVG element
       var svg = d3.select("body")
             .append("svg")
@@ -46,11 +58,12 @@
       //    .attr("r", function(d) {
       //       return d.open_issues_count + 1;
       //    });
-      
+
       group = svg.selectAll("g")
       .data(dataset)
       .enter()
       .append("g")
+
 
       //this is the vertical rectangles
       group.append("rect")
@@ -61,10 +74,10 @@
               return 10; // TODO
           })                
           .attr("x", function(d){
-              return (d.size/2 - 2) ; // TODO
+            return xScale(newParse(d["Population: Ages 65+ (% of total)"]) /2 - 4) ; // TODO TODO
           })
           .attr("y", function(d){
-              return d.size - 2; // TODO
+              return yScale(newParse(d["Health: Health expenditure per capita (current US$)"])) - 2; // TODO
           })                
         .attr("fill", "red");
 
@@ -77,12 +90,12 @@
               return 5; // TODO
           })                
           .attr("x", function(d){
-              return (d["Population:_Ages_65+_(%_of_total)"] /2 - 4) ; // TODO
+              return xScale((newParse(d["Population: Ages 65+ (% of total)"]) /2) - 4) ; // TODO
           })
           .attr("y", function(d){
-              return d.size; // TODO
+               return yScale(d["Health: Health expenditure per capita (current US$)"]); // TODO
           })                
-        .attr("fill", "red");
+        .attr("fill", "blue");
 
       });      
     </script>
