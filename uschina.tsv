@@ -1,4 +1,4 @@
-Country	Date	Railways	Cars	Phones	Internet_users	Mortality	Health_expenditure	Health_expenditure	Total_pop	Urban_pop	Birth_rate	Birth_female_life_expectancy	Birth_male_life_expectancy	Life_expectancy	Ages_0-14	Ages_15-64	Ages_65+	GDP_per_capita
+Country	Date	Railways	Cars	Phones	Internet_users	Mortality	Health_expenditure	Health_expenditure	Total_pop	Urban_pop	Birth_rate	Birth_female_life_expectancy	Birth_male_life_expectancy  Life_expectancy Ages_0-14 Ages_15-64	Ages_65+  GDP_per_capita
 United States	7/1/2000			109,478,031	43	9	4,703	13	282,162,411	223,190,467	15	79	74	77	21	66	12	9,898,800,000,000	35,082
 United States	7/1/2001			128,500,000	49	8	5,052	14	284,968,955	226,379,338	14	79	74	77	21	66	12	10,233,900,000,000	35,912
 United States	7/1/2002			141,800,000	59	8	5,453	15	287,625,193	229,467,379	14	80	74	77	21	67	12	10,590,200,000,000	36,819
