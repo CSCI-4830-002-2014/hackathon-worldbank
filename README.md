@@ -50,13 +50,15 @@ Authors:
 
 ![screenshot of D3 visualization](img/design-1.png?raw=true)
 
-[source code](d3_1.html)
+[source code](d3hack.html)
 
 ### Design 2
 ![screenshot of D3 visualization](img/design_2.png?raw=true)
 
-[source code](d3_2.html)
+[source code](d3hack-2.html)
 
 # Objective 2. Public Display
 
 ![photo of the public display showing the team's first visualization](img/public_1.png?raw=true)
+
+![photo of the public display showing the team's first visualization](img/public_2.png?raw=true)
