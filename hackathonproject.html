@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<svg class="chart" width="420" height="120"></svg>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<style type="text/css">
+ 
+  .chart text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+  }
+</style>
+<script>
+
+var h = 420,
+    w = 600;
+
+var chart = d3.select(".chart")
+    .attr("width", width);
+
+d3.tsv("https://gist.githubusercontent.com/BrianNewsom/4cce1f6f3cb1f39d3017/raw/3289e4cccf6579d65fb3569a190659d7125f1679/gistfile1.txt",function (error, data) {
+    /* Add + so that it finds the max number */
+
+    chart.attr("height", barHeight * 10);
+
+    var bar = chart.selectAll("g")
+        .data(data)
+        .enter().append("g")
+        .attr("transform", function (d, i) {
+        return "translate(0," + i * barHeight + ")";
+    });
+
+    bar.append("rect")
+        .attr("width", 30)/*function (d) {
+        return d.Finance:_GDP_per_capita_(current_US$);
+    }) */
+        .attr("height", 300)
+        .attr("x", function (i) {return i * 10; })
+        .attr("y", w - 300);
+        
+    bar.append("text")
+        .attr("x", function (i) {
+        return i * 10;
+    }) 
+        .attr("y", barHeight / 2)
+        .attr("dy", ".35em")
+        .text(function (d) {
+        return d.Country_Name;
+    });
+});
+
+</script>

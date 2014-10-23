@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+<svg class="chart"></svg>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+//Create SVG element
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+/*var dataset = d3.tsv("uschina.tsv", type, function(error, data) {
+  x.domain([0, d3.max(data, function(d) { return d.gdp_per_capita; })]); */
+
+  svg.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+   .attr("x", function(d, i) {
+    return i * 21;  //Bar width of 20 plus 1 for padding
+})
+   .attr("y", function(d, i) {return h - d.gdp_per_capita;})
+   .attr("width", 20)
+   .attr("height", function(d) {return d.gdp_per_capitia;})
+   .attr('fill', function(d){ if (d.country == "United States"){
+    return "blue";
+   }else{
+    return "red";
+   }
+  });
+
+
+  svg.append("text")
+      .attr("x", function(d, i) { return i * 21 })
+      .attr("y", h)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.country; });
+});
+
+</script>
