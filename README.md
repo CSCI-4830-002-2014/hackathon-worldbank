@@ -48,7 +48,7 @@ Authors:
 
 ### Design 1
 
-![screenshot of D3 visualization](img/design-1.png?raw=true)
+![screenshot of D3 visualization](img/vis2.png?raw=true)
 
 [source code](d3_1.html)
 
