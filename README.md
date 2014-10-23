@@ -6,13 +6,8 @@
 * [Sam Korn](https://github.com/sako0938)
 * [Alexia Newgord](https://github.com/alne4294)
 * [Jake Charland](https://github.com/jakecharland)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Jake White](https://github.com/jakewhite8)
+* [Niklas Fejes](https://github.com/nfejes)
 
 # Objective 1. Custom Visualizations
 
@@ -21,59 +16,33 @@
 ### Idea 1
 ![initial-sketch](img/init_sketch-1.png?raw=true)
 
-{write-a-paragraph-to-explain}
+As you can see, we have GDP per Capita vs. life expectancy. What's interesting here is that we have correlated in the size of birth rates as well as the health expenditure per capita. The hypothesis is that as GDP goes up, so does life expectancy. It would also make sense that as both of these rise, so would the health expenditures. Birth rates are likely to decrease (people tend to have less kids in more developed and structured countries).
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Alexia Newgord](https://github.com/alne4294)
+* [Jake Charland](https://github.com/jakecharland)
 
 ### Idea 2
-![initial-sketch](initial_sketch.png?raw=true)
+![initial-sketch](img/init_sketch-2.png?raw=true)
 
-{write-a-paragraph-to-explain}
+This is similar to the first sketch, although the ideas were thought up seperately. It's essentially matching the GDP of population under 14 to the life expectancy. We didn't have a ton of time to come up with ways to include other parts of the data, but we will in the final product.
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Michael Aaron](https://github.com/develra)
+* [Austin Wood](https://github.com/indiesquidge)
 
 ### Idea 3
-![initial-sketch](initial_sketch.png?raw=true)
+![initial-sketch](img/init_sketch-3.png?raw=true)
 
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 4
-![initial-sketch](initial_sketch_photo.png?raw=true)
-
-Authors:
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-
-### Idea 5
-![initial-sketch](initial_sketch.png?raw=true)
-
-{write-a-paragraph-to-explain}
+This sketch compares the number of internet users against GDP. We suspect a positive correlation for higher GDP to more internet users, since they would have more access to this kind of infrastructure. We were thinking we could correlate life expectancy at birth and use svg circles to show the percent of people livin in a given country. There are lots of opportunities here to include other parts of the data as well.
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Jake White](https://github.com/jakewhite8)
+* [Niklas Fejes](https://github.com/nfejes)
 
-### Idea 6
-![initial-sketch](initial_sketch.png?raw=true)
-
-{write-a-paragraph-to-explain}
-
-Authors:
-
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
 
 ## Final Sketches
 
