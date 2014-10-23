@@ -27,8 +27,7 @@ Authors:
 * [Chris Wittenberg](https://github.com/cwitty1919)
 
 ## Final Sketches
-PHONE DIED. CANNOT TAKE PIC
-[final sketch](IMAG0125.jpg?raw=true) 
+![final sketch](IMAG0125.jpg?raw=true) 
 
 We are making a visualization with transitioning bars, along with a connecting line that changes color whether or not it is positive, negative or neutral.
 
