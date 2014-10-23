@@ -44,32 +44,19 @@ Authors:
 * [Niklas Fejes](https://github.com/nfejes)
 
 
-## Final Sketches
-
-[final sketch 1 of 2](final_sketch1.png?raw=true)
-
-{write-a-paragraph-to-explain}
-
-[final sketch 2 of 2](final_sketch2.png?raw=true)
-
-{write-a-paragraph-to-explain}
-
-
 ## Implementation
 
 ### Design 1
 
-![screenshot of D3 visualization](d3_screenshot.png?raw=true)
+![screenshot of D3 visualization](img/design-1.png?raw=true)
 
-[d3 source code](d3_1.html)
+[source code](d3_1.html)
 
 ### Design 2
-![screenshot of D3 visualization](d3_screenshot.png?raw=true)
+![screenshot of D3 visualization](img/design_2.png?raw=true)
 
-[d3 source code](d3_2.html)
+[source code](d3_2.html)
 
 # Objective 2. Public Display
 
-![photo of the public display showing the team's first visualization](photo1.png?raw=true)
-
-![photo of the public display showing the team's second visualization](photo2.png?raw=true)
+![photo of the public display showing the team's first visualization](img/public_1.png?raw=true)
