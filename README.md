@@ -10,7 +10,7 @@
 ## Initial Sketches
 
 ### Idea 1
-![initial-sketch](sketch1.png?raw=true) 
+![initial-sketch](sketch1.jpg?raw=true) 
 
 Logan and Mike came up with the idea to make the points on the scatterplot crosses, with the length and heights representing different values.
 
@@ -46,8 +46,10 @@ Due to the rapid-ness of the class, we went ahead and just used the first sketch
 
 [d3 source code](test.html)
 
+We had some troubles getting the data into d3 because of header permissions and d3's library's inability to use local files. This setback is what caused the few bugs that we did have.
+
 
 # Objective 2. Public Display
 
-![photo of the public display showing the team's first visualization](selfie.png?raw=true)
+![photo of the public display showing the team's first visualization](selfie.jpg?raw=true)
 
