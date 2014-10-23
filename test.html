@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Scatter Plot</title>
+      <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">
+      /* No style rules here yet */   
+    </style>
+  </head>
+  
+  <body>
+    <script type="text/javascript">
+
+      //Width and height
+      var width = 1400;
+      var height = 600;
+      var padding = 40;
+      
+      d3.json("https://api.github.com/orgs/csci-4830-002-2014/repos", function(error, dataset) {
+      //Create scale functions
+      var xScale = d3.scale.linear()
+                 .domain([0, d3.max(dataset, function(d) { return d.size; })])
+                 .range([padding, width - padding * 2]);
+
+      var yScale = d3.scale.linear()
+                 .domain([0, d3.max(dataset, function(d) { return d.forks_count; })])
+                 .range([height - padding, padding]);
+      //Create SVG element
+      var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+      // svg.selectAll("circle")
+      //    .data(dataset)
+      //    .enter()
+      //    .append("circle")
+      //    .attr("fill","red")
+      //    .attr("cx", function(d) {
+      //       return xScale(d.size);
+      //    })
+      //    .attr("cy", function(d) {
+      //       return yScale(d.forks_count);
+      //    })
+      //    .attr("r", function(d) {
+      //       return d.open_issues_count + 1;
+      //    });
+      
+      group = svg.selectAll("g")
+      .data(dataset)
+      .enter()
+      .append("g")
+
+      //this is the vertical rectangles
+      group.append("rect")
+          .attr("width", function(d,i){
+              return 5;
+          })
+          .attr("height", function(d,i){
+              return 10; // TODO
+          })                
+          .attr("x", function(d){
+              return (d.size/2 - 2) ; // TODO
+          })
+          .attr("y", function(d){
+              return d.size - 2; // TODO
+          })                
+        .attr("fill", "red");
+
+      //this is the horizontal rectangles
+      group.append("rect")
+          .attr("width", function(d,i){
+              return 10;
+          })
+          .attr("height", function(d,i){
+              return 5; // TODO
+          })                
+          .attr("x", function(d){
+              return (d.size/2 - 4) ; // TODO
+          })
+          .attr("y", function(d){
+              return d.size; // TODO
+          })                
+        .attr("fill", "red");
+
+      });      
+    </script>
+  </body>
+</html>
