@@ -1,9 +1,9 @@
 # Team Members
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Alex Tsankov](http://github.com/antsankov)
+* [Josh Ferge](http://github.com/Joshferge)
+* [Mike Fyk](http://github.com/thefyk)
+* [Logan Bates](http://github.com/loganbates)
 * [name-of-a-team-member](URL to this member's github account)
 * [name-of-a-team-member](URL to this member's github account)
 * [name-of-a-team-member](URL to this member's github account)
@@ -19,14 +19,14 @@
 ## Initial Sketches
 
 ### Idea 1
-![initial-sketch](initial_sketch.png?raw=true) 
+![initial-sketch](sketch1.png?raw=true) 
 
 {write-a-paragraph-to-explain}
 
 Authors:
 
-* [name-of-a-team-member](URL to this member's github account)
-* [name-of-a-team-member](URL to this member's github account)
+* [Logan](http://github.com/loganbates)
+* [Mike](http://github.com/thefyk)
 
 ### Idea 2
 ![initial-sketch](initial_sketch.png?raw=true) 
